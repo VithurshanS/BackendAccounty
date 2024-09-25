@@ -1,7 +1,6 @@
 const {handleGet,handlePost} = require("./api.js")
 const express = require('express');
 const mysql = require('mysql2');
-const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
