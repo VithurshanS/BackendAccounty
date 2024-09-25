@@ -13,29 +13,16 @@ app.use(express.json());
 
 const users = []
 
-const dbPath = './accounty.db'; // SQLite database file stored in the project folder
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        return console.error(err.message);
-    }
-    console.log('Connected to the SQLite database.');
-});
-
-// Create a table if it doesn't exist
-db.run(`CREATE TABLE IF NOT EXISTS accounts (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    balance REAL
-)`);
 
 
 
-/*const database = mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password: 'vithu',
-    database: 'accounty'
-})*/
+const database = mysql.createConnection({
+    host: 'sql12.freesqldatabase.com',
+    user:'sql12733449',
+    password:'aNgaFw3kaM',
+    database: 'sql12733449',
+    port:3306
+})
 /*const database = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -43,16 +30,16 @@ db.run(`CREATE TABLE IF NOT EXISTS accounts (
     database: process.env.DB_NAME
 });
 */
-/*
-db.connect((error)=>{
+
+database.connect((error)=>{
     if(error){
-        console.log("error occured")
+        console.log("error occured",error);
     }
     else{
         console.log("database successfully connected");
     }
 })
-*/
+
 
 
 function scri(data){
@@ -74,7 +61,7 @@ function nun(){
 function ss() {
     return new Promise((resolve,reject) => {
       let quer = "SELECT * FROM accounts;";
-      db.all(quer,[],(err, result) => {
+      database.query(quer, (err, result) => {
         if (err) {
           console.log('Error occurred:', err);
           return reject(err);
@@ -92,7 +79,7 @@ function inputdata(body){
         }
         //res.send("data successfully inserted");
         const query = 'insert into accounts (name,balance) values (?,?);'
-        db.run(query,[s_ID,i_ID],(err,result)=>{
+        database.query(query,[s_ID,i_ID],(err,result)=>{
             if(err){
                 return reject(err);
             }
