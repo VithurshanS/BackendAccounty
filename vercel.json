@@ -15,9 +15,6 @@
       "src": "/(.*)",
       "dest": "/index.html"
     },
-    {
-      "src": "/input(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/input", "dest": "/api/input" }
   ]
 }
