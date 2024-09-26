@@ -7,7 +7,11 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+    origin: '*'  // Allow all origins (for testing); restrict to specific domains for production
+}));
+
 app.use(express.json());
 
 const users = []
