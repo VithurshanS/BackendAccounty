@@ -2,7 +2,7 @@
   "name": "web",
   "version": "1.0.0",
   "description": "1st commit",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
