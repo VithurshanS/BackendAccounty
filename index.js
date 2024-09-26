@@ -100,8 +100,8 @@ module.exports = (req, res) => {
   };
   
 
-/*app.listen(3055,()=>{
+app.listen(3055,()=>{
     console.log('server started');
-})*/
+})
 
 module.exports = app;
