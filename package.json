@@ -4,7 +4,7 @@
   "description": "1st commit",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js"
   },
   "author": "vithurshan",
   "license": "ISC",

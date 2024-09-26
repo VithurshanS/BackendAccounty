@@ -94,7 +94,14 @@ handlePost(app,"/hel",scri);
 handleGet(app,"/print",nun);
 
 
+module.exports = (req, res) => {
+    // Your API logic goes here
+    res.status(200).json({ message: "API is working!" });
+  };
+  
 
-app.listen(3055,()=>{
+/*app.listen(3055,()=>{
     console.log('server started');
-})
+})*/
+
+module.exports = app;
